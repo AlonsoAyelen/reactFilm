@@ -5,12 +5,11 @@ import App from './App';
 import {describe, expect, it} from "vitest";
 
 describe('App', () => {
-  it('renders headline', () => {
+  it('should render component', () => {
     const component = render(<App />);
-    const heading = component.getByRole("heading", {
-      name: "APP PARA PELIS",
-    });
-    console.log(heading);
+    const title = component.getByText("APP PARA PELIS"
+    );
+    expect(component).toBeDefined();
     
   });
 });

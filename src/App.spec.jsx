@@ -8,7 +8,7 @@ describe('App', () => {
   it('renders headline', () => {
     const component = render(<App />);
     const heading = component.getByRole("heading", {
-      name: /react/i,
+      name: "APP PARA PELIS",
     });
     console.log(heading);
     

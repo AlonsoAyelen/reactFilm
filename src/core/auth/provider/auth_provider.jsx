@@ -1,7 +1,16 @@
 import { AuthContext } from "../context/auth_context";
 
 export const AuthProvider = () => ({children}) =>{
-    return <AuthContext.Provider value={{isLoggedIn: true,}}>
+    const [isLoggedIn, setIsLoggedIn] = useState(true);
+    const login = async () => {
+        setIsLoggedIn(true);
+    };
+
+    const logout = async () => {
+        setIsLoggedIn(false);
+    };
+
+    return <AuthContext.Provider value={{isLoggedIn,login,logout }}>
         {children}
     </AuthContext.Provider>
 }
